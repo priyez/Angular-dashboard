@@ -1,0 +1,17 @@
+.pagination{
+    margin: 2rem;
+    position: relative;
+    height: 5rem;
+    top: 15px;
+    display: flex;
+    justify-content: center;
+
+    button{
+    width: 10%;
+    margin: 5px 10px;
+    border: 1.5px solid;
+    @media only screen and (max-width: 37.5em) { // phone
+        width: 40%;
+     }
+    }
+}

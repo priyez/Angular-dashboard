@@ -1,0 +1,22 @@
+
+  <button (click)="goBack()" class="back">Go Back</button>
+  <!-- Loading indicator -->
+  <app-loading [loading]="loading"></app-loading>
+
+  <!-- Error message -->
+  <app-error [error]="error"></app-error>
+
+  <div class="user-detail-container">
+  <div *ngIf="data" class="user-detail">
+    <div class="user-detail__img">
+      <div class="user-detail__img__inner">
+        <img [src]="data.avatar" alt="User Avatar">
+      </div>
+    </div>
+    <div class="user-detail__content">
+      <span>{{ data.id }} </span>
+      <h1> {{ data.first_name }} {{ data.last_name }}</h1>
+      <h3>{{ data.email }}</h3>
+    </div>
+  </div>
+</div>

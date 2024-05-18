@@ -1,0 +1,101 @@
+.user-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    align-items: start;
+    justify-items: center;
+    grid-gap: 4rem 4rem;
+    @media only screen and (max-width: 37.5em) { // phone
+        grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
+     }
+    .card {
+        display: grid;
+        grid:
+            "preview" minmax(56.25%, auto) "content" auto / minmax(0, 100%);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        &__bg {
+
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: -1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1.5px solid #101119;
+            background: #fff;
+            color: #101119;
+            // clip-path: inset(var(--inset-top, 2rem) (0, 2rem) var(--inset-bottom, 2rem) var(--inset-left, 2rem) round 10px);
+            contain: strict;
+            transition: clip-path .3s ease .1s;
+            :hover{
+                border: 5.5px solid #d3d3d3;
+            }
+        }
+
+        &__container {
+            opacity: .99;
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            display: grid;
+            grid-area: auto;
+            align-items: stretch;
+
+            &__img {
+                height: 100%;
+                border-radius: 6px;
+                padding-top: 56.25%;
+                background: #ddd;
+                color: #000;
+                background-size: cover;
+                position: relative;
+
+                img {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &__content {
+            grid-area: auto;
+            z-index: 2;
+
+            &__details {
+                width: 95%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                flex: 1;
+                margin: 1rem 1rem 0 0;
+                h2{
+                    font-weight: 900;
+                    font-size: 17px;
+                    margin: 0 0 .25rem;
+                    display: block;
+                    color: #101119;
+                }
+                p{
+                    color: #101119;
+                    font: inherit;
+                    font-size: 12px;
+                    line-height: 1.2;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+

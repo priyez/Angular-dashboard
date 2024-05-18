@@ -1,0 +1,5 @@
+<div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPage">Next</button>
+  </div>
+  

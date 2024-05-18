@@ -1,0 +1,191 @@
+@import './app/header/header.component.scss';
+@import './app/footer/footer.component.scss';
+
+/*--------------------------
+    variables
+---------------------------*/
+
+// font face //
+
+@font-face {
+    font-family: 'Neue Haas Grotesk Display Pro"';
+    src: url('./assets/font/NeueHaasDisplayMediu.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Aktiv Grotesk Regular';
+    src: url('./assets/font/AktivGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Bold';
+    src: url('./assets/font/AktivGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+$primary-font: 'Aktiv Grotesk Regular', sans-serif;
+$secondary-font: 'Aktiv Grotesk Bold', sans-serif;
+$credits-marquee: 'Neue Haas Grotesk Display Pro', Arial, Helvetica,
+sans-serif;
+
+// colors //
+$primary-color: #fff;
+
+
+/*--------------------------
+    base settings
+---------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 10px
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    width: 100%;
+
+    @media only screen and (max-width: 62.5em) { // tab-land
+        font-size: 56.25%; // 9px
+    }
+    
+    @media only screen and (max-width: 56.25em) { // tab-port
+        font-size: 50%; // 8px
+    }
+
+    @media only screen and (max-width: 37.5em) { // phone
+        font-size: 46.87%; // 7.5px 
+    }
+    
+    @media only screen and (min-width: 112.5em) { // big desktop
+        font-size: 75%; // 1rem = 12px, 12/16 = 75
+    }
+}
+
+body{
+    font-family: $primary-font;
+    color: #101119;
+    background-color:#f3f3f3;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    min-height: 65rem;
+    width: 100%;
+}
+
+a{
+    color: #101119;
+    text-decoration: none;
+}
+
+
+
+/*--------------------------
+    typography
+---------------------------*/
+.h1 {
+    font-size: 4.5rem;
+    font-family: $secondary-font;
+    color: lighten($primary-color, 35%);
+    letter-spacing: -3px;
+    padding: 1.5rem;
+}
+
+.h2 {
+    font-size: 3rem;
+    text-transform: capitalize;
+    letter-spacing: -1.5px;
+    margin-bottom: 2rem;
+}
+
+.h3 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding:1rem 0;
+}
+
+.h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #757373;
+    margin-bottom: 1rem;
+}
+
+.paragraph {
+    font-size: 1.35rem;
+    color: #757373;
+}
+
+
+
+
+
+
+
+/*--------------------------
+    preloader
+---------------------------*/
+
+.preloader{
+  width:100%;
+  height:100vh;
+  background-color: #B4D51E;
+  overflow:hidden;
+  position:fixed;
+  z-index: 999;
+
+  &__wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+.loading-box {
+    width: 30%;
+    height: .5%;
+    position: relative;
+}
+
+.loading-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #99b813;
+
+}
+.loading-2 {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #e6f0b9;
+}
+
+.p {
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    margin-bottom: 2rem;
+}

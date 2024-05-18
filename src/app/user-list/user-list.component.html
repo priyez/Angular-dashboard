@@ -1,0 +1,39 @@
+  <div>
+  <app-header></app-header>
+
+  <!-- Loading indicator -->
+  <app-loading [loading]="loading"></app-loading>
+
+  <!-- Error message -->
+  <app-error [error]="error"></app-error>
+  
+<div class="user-list">
+  
+ <a *ngFor="let user of users" class="card"  [routerLink]="['/user', user.id]">
+   
+      <div class="card__bg"></div>
+
+      <div class="card__container">
+        <div class="card__container__img">
+          <img [src]="user.avatar" alt="User Avatar">
+        </div>
+      </div>
+      
+      <div class="card__content">
+        <div class="card__content__details">
+          <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+          <p>{{ user.email }}</p>
+          <!-- <p>ID: {{ user.id }}</p> -->
+        </div>
+      </div>
+  
+  </a>
+</div>
+
+  <!-- Pagination controls -->
+  <app-pagination 
+  [currentPage]="currentPage"
+  [totalPage]="totalPage"
+  (pageChange)="onPageChange($event)">
+</app-pagination>
+</div>
